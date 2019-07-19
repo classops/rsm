@@ -2,6 +2,7 @@ package com.hanter.android.rsm;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
@@ -27,7 +28,7 @@ import java.util.List;
  */
 public class Rsm {
 
-    public static Rsm sRsm;
+    private static Rsm sRsm;
 
     private final AssetManager assetManager;
     private final Gson gson = new Gson();
@@ -35,9 +36,9 @@ public class Rsm {
     private final List<RsmConverter.Factory> converterFactories;
     private final List<CallAdapter.Factory> adapterFactories;
 
-    public static synchronized void init(Context context) {
+    public static synchronized void init(@NonNull Context context) {
         if (sRsm == null) {
-            sRsm = new Rsm(context);
+            sRsm = new Rsm(context.getApplicationContext());
         }
     }
 

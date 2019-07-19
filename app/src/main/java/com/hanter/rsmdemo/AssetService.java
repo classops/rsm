@@ -4,7 +4,7 @@ import android.database.Observable;
 import com.hanter.android.rsm.AssetName;
 import java.util.List;
 
-public interface TestService {
+public interface AssetService {
 
     @AssetName("test.json")
     List<TestBean> test();

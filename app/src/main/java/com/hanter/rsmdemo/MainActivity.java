@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRsm() {
-        Rsm.init(this.getApplicationContext());
+        Rsm.init(this);
         Rsm.getInstance().addCallAdapterFactory(RxJavaCallAdapterFactory.create());
         Rsm.getInstance().addCallAdapterFactory(ObjectCallAdapterFactory.create());
         Rsm.getInstance().addConverterFactory(GsonConverterFactory.create());
     }
 
     private void test() {
-        List<TestBean> list = Rsm.getInstance().create(TestService.class).test();
+        List<TestBean> list = Rsm.getInstance().create(AssetService.class).test();
         for (TestBean testBean : list) {
             Log.e("Test", "test name: " + testBean.getName() + ", content: " + testBean.getContent());
         }
