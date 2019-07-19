@@ -17,7 +17,7 @@
 2. 添加依赖
     ``` gradle
     dependencies {
-        implementation 'com.github.wangmingshuo:rsm:Tag'
+        implementation 'com.github.wangmingshuo:rsm:0.1.1'
     }
     ```
 
