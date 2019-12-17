@@ -3,6 +3,7 @@ package com.hanter.rsmdemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.hanter.android.rsm.GsonConverterFactory;
 import com.hanter.android.rsm.ObjectCallAdapterFactory;
@@ -32,9 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void test() {
         List<TestBean> list = Rsm.getInstance().create(AssetService.class).test();
+        StringBuilder stringBuilder = new StringBuilder();
         for (TestBean testBean : list) {
-            Log.e("Test", "test name: " + testBean.getName() + ", content: " + testBean.getContent());
+            stringBuilder.append("test name: " + testBean.getName() + ", content: " + testBean.getContent() + "\n");
         }
+        ((TextView) findViewById(R.id.tvContent)).setText(stringBuilder.toString());
     }
 
 }
