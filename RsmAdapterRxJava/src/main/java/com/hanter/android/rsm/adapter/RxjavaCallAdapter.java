@@ -1,6 +1,10 @@
-package com.hanter.android.rsm;
+package com.hanter.android.rsm.adapter;
 
 import android.support.annotation.Nullable;
+
+import com.hanter.android.rsm.CallAdapter;
+import com.hanter.android.rsm.RsmCall;
+
 import java.lang.reflect.Type;
 import rx.Observable;
 import rx.Scheduler;

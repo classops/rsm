@@ -1,1 +1,1 @@
-include ':app', ':rsm'
+include ':app', ':rsm', ':RsmAdapterRxJava2', ':RsmAdapterRxJava'

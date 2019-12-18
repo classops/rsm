@@ -19,8 +19,8 @@ import java.util.List;
 /**
  * 类名：Rsm <br/>
  * 描述：Rsm(Response Simulator) 从Assets资源中资源中模拟HTTP响应数据
- * TODO 添加ServiceMethod类，提供 callAdapter 和 converter 进行数据转换
- * TODO Rsm添加Adapter方法，逐步匹配适应的 AdapterFactory
+ * ServiceMethod类，提供 callAdapter 和 converter 进行数据转换
+ * Adapter方法，逐步匹配适应的 AdapterFactory
  * 创建时间：2018/10/30 22:24
  *
  * @author hanter
@@ -42,7 +42,7 @@ public class Rsm {
         }
     }
 
-    public static synchronized Rsm getInstance() {
+    public static synchronized Rsm get() {
         return sRsm;
     }
 

@@ -1,4 +1,6 @@
-package com.hanter.android.rsm;
+package com.hanter.android.rsm.adapter;
+
+import com.hanter.android.rsm.RsmCall;
 
 import java.io.IOException;
 

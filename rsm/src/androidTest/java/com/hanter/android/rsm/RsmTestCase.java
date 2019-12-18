@@ -3,7 +3,6 @@ package com.hanter.android.rsm;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.Log;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -30,14 +29,14 @@ public class RsmTestCase {
     public void onBefore() {
         Context appContext = InstrumentationRegistry.getContext();
         Rsm.init(appContext);
-        Rsm.getInstance().addCallAdapterFactory(RxJavaCallAdapterFactory.create());
-        Rsm.getInstance().addCallAdapterFactory(ObjectCallAdapterFactory.create());
-        Rsm.getInstance().addConverterFactory(GsonConverterFactory.create());
+        Rsm.get().addCallAdapterFactory(RxJavaCallAdapterFactory.create());
+        Rsm.get().addCallAdapterFactory(ObjectCallAdapterFactory.create());
+        Rsm.get().addConverterFactory(GsonConverterFactory.create());
     }
 
     @Test
     public void testObject() {
-        List<TestBean> list = Rsm.getInstance().create(TestService.class).test();
+        List<TestBean> list = Rsm.get().create(TestService.class).test();
         assertNotNull(list);
 
         for (TestBean testBean : list) {
@@ -48,7 +47,7 @@ public class RsmTestCase {
 
     @Test
     public void testObjectTask() {
-        Observable<List<TestBean>> listTask = Rsm.getInstance().create(TestService.class)
+        Observable<List<TestBean>> listTask = Rsm.get().create(TestService.class)
                 .testTask();
         assertNotNull(listTask);
 
