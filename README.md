@@ -17,16 +17,16 @@
 2. 添加依赖
     ``` gradle
     dependencies {
-        implementation 'com.github.wangmingshuo:rsm:0.1.1'
+        implementation 'com.github.wangmingshuo:rsm:0.1.3'
     }
     ```
 
 ##### 初始化
 ``` java
 Rsm.init(this);
-Rsm.getInstance().addCallAdapterFactory(RxJavaCallAdapterFactory.create());
-Rsm.getInstance().addCallAdapterFactory(ObjectCallAdapterFactory.create());
-Rsm.getInstance().addConverterFactory(GsonConverterFactory.create());
+Rsm.get().addCallAdapterFactory(RxJava2CallAdapterFactory.create());
+Rsm.get().addCallAdapterFactory(ObjectCallAdapterFactory.create());
+Rsm.get().addConverterFactory(GsonConverterFactory.create());
 ```
 
 ##### 获取Assets目录数据
@@ -44,7 +44,7 @@ public interface AssetService {
 ``` java
 List<TestBean> list = Rsm.getInstance().create(AssetService.class).test();
 ```
-支持RxJava返回类型
+支持RxJava2返回类型
 
 ``` java
 public interface AssetService {
